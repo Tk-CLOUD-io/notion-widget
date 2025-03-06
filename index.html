@@ -3,27 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ngày Hôm Nay</title>
+    <title>Ngày Tháng</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            font-size: 24px;
-            background-color: #f4f4f4;
-            padding: 20px;
+            background-color: #000; /* Nền đen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        #date {
-            font-weight: bold;
-            color: #333;
+        #date-container {
+            background-color: #222; /* Màu xám đậm */
+            color: #fff; /* Chữ trắng */
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            padding: 20px;
+            border-radius: 12px; /* Bo tròn 4 góc */
+            text-align: center;
+            width: 200px; /* Hình vuông */
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Hiệu ứng đổ bóng nhẹ */
         }
     </style>
 </head>
 <body>
-    <div id="date"></div>
+    <div id="date-container"></div>
     <script>
         var today = new Date();
-        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById("date").innerHTML = today.toLocaleDateString("vi-VN", options);
+        var options = { month: 'long', day: 'numeric' };
+        document.getElementById("date-container").innerHTML = today.toLocaleDateString("vi-VN", options);
     </script>
 </body>
 </html>
