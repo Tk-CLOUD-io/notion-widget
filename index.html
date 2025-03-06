@@ -11,21 +11,23 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
         #date-container {
             background-color: #222; /* Màu xám đậm */
             color: #fff; /* Chữ trắng */
             font-family: Arial, sans-serif;
-            font-size: 24px;
-            padding: 20px;
-            border-radius: 12px; /* Bo tròn 4 góc */
+            font-size: 28px; /* Chữ to hơn một chút */
+            padding: 30px;
+            border-radius: 20px; /* Bo tròn 4 góc */
             text-align: center;
-            width: 200px; /* Hình vuông */
-            height: 80px;
+            width: 150px; /* Hình vuông */
+            height: 150px;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Hiệu ứng đổ bóng nhẹ */
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Hiệu ứng đổ bóng nhẹ */
+            text-transform: uppercase; /* Viết hoa chữ */
         }
     </style>
 </head>
@@ -33,8 +35,8 @@
     <div id="date-container"></div>
     <script>
         var today = new Date();
-        var options = { month: 'long', day: 'numeric' };
-        document.getElementById("date-container").innerHTML = today.toLocaleDateString("vi-VN", options);
+        var options = { day: '2-digit', month: 'short' };
+        document.getElementById("date-container").innerHTML = today.toLocaleDateString("en-GB", options).replace(".", "");
     </script>
 </body>
 </html>
